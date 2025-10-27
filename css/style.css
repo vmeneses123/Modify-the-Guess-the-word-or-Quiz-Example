@@ -1,0 +1,79 @@
+
+body {
+ 
+  background-image: url("../images/space.jpg"); 
+  background-size: cover;              
+  background-repeat: no-repeat;        
+  color: #ffffff;                     
+  font-family: Arial, sans-serif;
+  margin: 0;  
+
+display: flex;                     
+justify-content: center;             
+align-items: center;                
+  height: 100vh;                      
+}   
+
+
+#quiz-container {
+  background-color: #111144; 
+  border: 2px solid #00ffff;  
+  border-radius: 15px;       
+  padding: 20px;    
+
+  width: 400px; 
+  height: auto;             
+  margin: 0 auto;            
+  box-shadow: 0 0 15px #00ffff; 
+}
+
+#optionsForm {
+    color :rgb(144, 233, 238);
+}
+
+h1 {
+  color: #00ffff;            
+  font-size: 1.8em;          
+  margin-bottom: 20px;       
+}
+
+#question {
+  font-size: 1.2em;          
+  margin-bottom: 15px;       
+}
+
+#answer {
+  padding: 8px;               
+  width: 80%;                
+  border: 2px solid #00ffff; 
+  border-radius: 8px;      
+  background-color: #000033; 
+  color: #ffffff;            
+}
+
+
+#submit {
+
+display: block;      
+margin: 15px auto 0;
+margin-top: 15px;         
+padding: 10px 20px;      
+border: none;             
+border-radius: 8px;       
+background-color: #00ffff; 
+color: #000022;           
+font-weight: bold;         
+cursor: pointer;          
+box-shadow: 0 0 10px #00ffff; 
+}
+
+
+#submit:hover {
+  background-color: #00cccc;
+}
+
+#result {
+  margin-top: 20px;          
+  font-size: 1.2em;          
+  color: #00ff99;          
+}
