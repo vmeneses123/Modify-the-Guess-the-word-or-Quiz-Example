@@ -4,39 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Adventure Quiz</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <script src="js/quiz.js" defer></script>
 </head>
 <body>
+
+    <!-- UIkit Alert -->
+    <div class="uk-alert-primary" data-uk-alert>
+        <a class="uk-alert-close" data-uk-close></a>
+        <p>🚀 Welcome to the Space Adventure Quiz!</p>
+    </div>
+
+    <!-- Instructions Button -->
+    <button class="uk-button uk-button-primary" data-uk-toggle="target: #instructions-modal">
+        Quiz Instructions
+    </button>
+
+    <!-- Slideshow -->
+    <div class="uk-position-relative uk-visible-toggle slideshow-container" 
+         data-uk-slideshow="animation: fade; autoplay: true; ratio: 7:3" 
+         tabindex="-1">
+
+        <ul class="uk-slideshow-items">
+            <li><img src="images/planet.jpg" alt="Planet" data-uk-cover></li>
+            <li><img src="images/saturn.jpg" alt="Saturn" data-uk-cover></li>
+            <li><img src="images/venus.jpg" alt="Venus" data-uk-cover></li>
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" 
+           href="#" data-uk-slidenav-previous data-uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" 
+           href="#" data-uk-slidenav-next data-uk-slideshow-item="next"></a>
+    </div>
+
+    <!-- Quiz Container -->
     <div id="quiz-container">
-        <h1> Space Adventure Quiz  </h1>
+        <h1>Space Adventure Quiz</h1>
+
+        <!-- Progress Bar -->
+        <div class="uk-margin">
+            <progress id="quiz-progress" class="uk-progress" value="0" max="5"></progress>
+        </div>
+
         <div id="question"></div>
 
         <form id="optionsForm">
-            <label>
-                <input type="radio" name="option" value="Mars">
-                Mars
-            </label>
-            <label>
-                <input type="radio" name="option" value="Saturn">
-                Saturn
-            </label>
-            <label>
-                <input type="radio" name="option" value="Venus">
-                Venus
-            </label>
-            <label>
-                <input type="radio" name="option" value="Supernova">
-                Supernova
-            </label>
-            <label>
-                <input type="radio" name="option" value="Milky Way">
-                Milky Way
-            </label>
+            <label><input type="radio" name="option" value="Mars"> Mars</label>
+            <label><input type="radio" name="option" value="Saturn"> Saturn</label>
+            <label><input type="radio" name="option" value="Venus"> Venus</label>
+            <label><input type="radio" name="option" value="Supernova"> Supernova</label>
+            <label><input type="radio" name="option" value="Milky Way"> Milky Way</label>
         </form>
 
         <button id="submit">Submit</button>
         <div id="result"></div>
     </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructions-modal" data-uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Space Quiz Instructions</h2>
+            <p>
+                🚀 Welcome to the Space Adventure Quiz! <br>
+                Answer all questions to the best of your knowledge. <br>
+                Each correct answer will move the progress bar forward. <br>
+                The quiz ends when you answer all questions. Good luck!
+            </p>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <footer>Space Quiz by: Veronica Meneses</footer>
+
 </body>
 </html>

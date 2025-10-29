@@ -1,34 +1,86 @@
+/* === Space Adventure Quiz Styles === */
 
 body {
- 
-  background-image: url("../images/space.jpg"); 
+  background-image: url("../images/spacebackground.jpg"); 
   background-size: cover;              
   background-repeat: no-repeat;        
   color: #ffffff;                     
   font-family: Arial, sans-serif;
   margin: 0;  
 
-display: flex;                     
-justify-content: center;             
-align-items: center;                
+  display: flex;                     
+  flex-direction: column;             /* stack alert on top, quiz below */
+  align-items: center;                /* center horizontally */
+  justify-content: flex-start;        /* align quiz below alert */
   height: 100vh;                      
-}   
+}
+#instructions-modal {
+    color: #003737;  /* cyan text color */
+}
+
+#instructions-modal {
+    text-align: center;
+}
+
+/* Optional: center title and paragraphs separately */
+#instructions-modal .uk-modal-title {
+    text-align: center;
+}
+
+#instructions-modal p {
+    text-align: center;
+}
+
+/* === Alert at Top === */
+.uk-alert-primary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97%;
+  z-index: 1000;
+}
+
+/* Ensure the "X" button (uk-close) is visible */
+.uk-alert-close {
+  color: rgb(182, 8, 8) !important;   /* Change to white if using dark alert */
+}
+
+.slideshow-container {
+  width: 500px;
+  height: 200px;
+  overflow: hidden;
+  margin: 20px auto;
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00ffff;
+  position: relative;  /* required for uk-cover */
+}
+.slideshow-container .uk-slidenav-previous {
+  color: #00e1ff;  /* your custom color */
+}
+
+/* Right arrow */
+.slideshow-container .uk-slidenav-next {
+  color: #00fff7;  /* another custom color */
+}
 
 
+/* === Quiz Container === */
 #quiz-container {
   background-color: #111144; 
   border: 2px solid #00ffff;  
   border-radius: 15px;       
   padding: 20px;    
-
   width: 400px; 
   height: auto;             
-  margin: 0 auto;            
   box-shadow: 0 0 15px #00ffff; 
+  margin-top: 120px;          /* push quiz below alert */
+  text-align: center;
 }
 
+/* === Form and Options === */
 #optionsForm {
-    color :rgb(144, 233, 238);
+  color: rgb(144, 233, 238);
 }
 
 h1 {
@@ -51,27 +103,25 @@ h1 {
   color: #ffffff;            
 }
 
-
+/* === Submit Button === */
 #submit {
-
-display: block;      
-margin: 15px auto 0;
-margin-top: 15px;         
-padding: 10px 20px;      
-border: none;             
-border-radius: 8px;       
-background-color: #00ffff; 
-color: #000022;           
-font-weight: bold;         
-cursor: pointer;          
-box-shadow: 0 0 10px #00ffff; 
+  display: block;      
+  margin: 15px auto 0;
+  padding: 10px 20px;      
+  border: none;             
+  border-radius: 8px;       
+  background-color: #00ffff; 
+  color: #000022;           
+  font-weight: bold;         
+  cursor: pointer;          
+  box-shadow: 0 0 10px #00ffff; 
 }
-
 
 #submit:hover {
   background-color: #00cccc;
 }
 
+/* === Result Text === */
 #result {
   margin-top: 20px;          
   font-size: 1.2em;          
